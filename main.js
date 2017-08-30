@@ -30,6 +30,22 @@ class Blossom {
     }
 }
 
+/** Sayaka ができること一覧。 */
+class Sayaka {
+    hunt(majo) {
+        put('瀟洒なソード投げ攻撃');
+        majo.die();
+    }
+}
+
+/** Madoka ができること一覧。 */
+class Madoka {
+    hunt(majo) {
+        put('かみのちから とくと めに やきつけておけ！！');
+        majo.die();
+    }
+}
+
 /** 魔女ができること一覧。 */
 class Majo {
     die() {
@@ -47,4 +63,8 @@ $(() => {
     mami.hunt(majo);
     homu.hunt(majo);
     blossom.hunt(majo);
+    const sayaka = new Sayaka();
+    const madoka = new Madoka();
+    sayaka.hunt(majo);
+    madoka.hunt(majo);
 });
