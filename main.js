@@ -21,5 +21,5 @@ $(() => {
     put('神は世界を創った');
     const syojo = new Syojo();
     const majo = new Majo();
-    syojo.hunt(majo);
+    syojo.hunt();
 });
