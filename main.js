@@ -12,7 +12,17 @@ class Syojo {
         this.name = name;
     }
     hunt(majo) {
-        put('ガッシ！ボカッ！');
+        switch (this.name) {
+            case 'Mami':
+                put('ティロフィナーレ(笑)');
+                break;
+            case 'HomuHomu':
+                put('時よ！(メガネクイッ)');
+                break;
+            case 'Blossom':
+                put('おしりパンチ！');
+                break;
+        }
         majo.die();
     }
 }
