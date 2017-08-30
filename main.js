@@ -6,11 +6,16 @@
  */
 const put = str => $('#list').append(`<li>${str}</li>`);
 
-/** Mami ができること一覧。 */
-class Mami {
+/** 魔法少女に共通した特徴一覧。 */
+class Syojo {
     die() {
-        put('Mami は死んだ');
+        put(`${this.constructor.name} は死んだ`);
     }
+    hunt(majo) {}
+}
+
+/** Mami ができること一覧。 */
+class Mami extends Syojo {
     hunt(majo) {
         put('ティロフィナーレ(笑)');
         majo.die();
@@ -18,10 +23,7 @@ class Mami {
 }
 
 /** HomuHomu ができること一覧。 */
-class HomuHomu {
-    die() {
-        put('HomuHomu は死んだ');
-    }
+class HomuHomu extends Syojo {
     hunt(majo) {
         put('時よ！(メガネクイッ)');
         majo.die();
@@ -29,10 +31,7 @@ class HomuHomu {
 }
 
 /** Blossom ができること一覧。 */
-class Blossom {
-    die() {
-        put('Blossom は死んだ');
-    }
+class Blossom extends Syojo {
     hunt(majo) {
         put('おしりパンチ！');
         majo.die();
@@ -40,10 +39,7 @@ class Blossom {
 }
 
 /** Sayaka ができること一覧。 */
-class Sayaka {
-    die() {
-        put('Sayaka は死んだ');
-    }
+class Sayaka extends Syojo {
     hunt(majo) {
         put('瀟洒なソード投げ攻撃');
         majo.die();
@@ -51,10 +47,7 @@ class Sayaka {
 }
 
 /** Madoka ができること一覧。 */
-class Madoka {
-    die() {
-        put('Madoka は死んだ');
-    }
+class Madoka extends Syojo {
     hunt(majo) {
         put('かみのちから とくと めに やきつけておけ！！');
         majo.die();
