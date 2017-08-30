@@ -7,7 +7,11 @@
 const put = str => $('#list').append(`<li>${str}</li>`);
 
 /** 魔法少女ができること一覧。 */
-class Syojo {}
+class Syojo {
+    hunt(majo) {
+        put('魔法少女は魔女を狩った');
+    }
+}
 
 /** 魔女ができること一覧。 */
 class Majo {}
@@ -17,4 +21,5 @@ $(() => {
     put('神は世界を創った');
     const syojo = new Syojo();
     const majo = new Majo();
+    syojo.hunt(majo);
 });
