@@ -6,23 +6,26 @@
  */
 const put = str => $('#list').append(`<li>${str}</li>`);
 
-/** 魔法少女ができること一覧。 */
-class Syojo {
-    constructor(name) {
-        this.name = name;
-    }
+/** Mami ができること一覧。 */
+class Mami {
     hunt(majo) {
-        switch (this.name) {
-            case 'Mami':
-                put('ティロフィナーレ(笑)');
-                break;
-            case 'HomuHomu':
-                put('時よ！(メガネクイッ)');
-                break;
-            case 'Blossom':
-                put('おしりパンチ！');
-                break;
-        }
+        put('ティロフィナーレ(笑)');
+        majo.die();
+    }
+}
+
+/** HomuHomu ができること一覧。 */
+class HomuHomu {
+    hunt(majo) {
+        put('時よ！(メガネクイッ)');
+        majo.die();
+    }
+}
+
+/** Blossom ができること一覧。 */
+class Blossom {
+    hunt(majo) {
+        put('おしりパンチ！');
         majo.die();
     }
 }
@@ -37,9 +40,9 @@ class Majo {
 /** 準備ができたらここからはじまるよ */
 $(() => {
     put('神は世界を創った');
-    const mami = new Syojo('Mami');
-    const homu = new Syojo('HomuHomu');
-    const blossom = new Syojo('Blossom');
+    const mami = new Mami();
+    const homu = new HomuHomu();
+    const blossom = new Blossom();
     const majo = new Majo();
     mami.hunt(majo);
     homu.hunt(majo);
