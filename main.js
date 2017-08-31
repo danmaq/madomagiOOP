@@ -55,6 +55,13 @@ class Madoka extends Syojo {
     }
 }
 
+/** Punie ができること一覧。 */
+class Punie extends Syojo {
+    get skill() {
+        return 'プリンセス卍固め!!!!';
+    }
+}
+
 /** 魔女ができること一覧。 */
 class Majo {
     attack(syojo) {
@@ -81,4 +88,6 @@ $(() => {
     sayaka.hunt(majo);
     madoka.hunt(majo);
     majo.attack(mami);
+    const punie = new Punie();
+    punie.hunt(majo);
 });
