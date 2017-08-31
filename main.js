@@ -8,6 +8,9 @@ const put = str => $('#list').append(`<li>${str}</li>`);
 
 /** 魔法少女に共通した特徴一覧。 */
 class Syojo {
+    constructor() {
+        put('<strong>契約が成立し、魔法少女が誕生した</strong>');
+    }
     die() {
         put(`${this.constructor.name} は死んだ`);
     }
@@ -64,6 +67,9 @@ class Punie extends Syojo {
 
 /** 魔女ができること一覧。 */
 class Majo {
+    constructor() {
+        put('<strong>絶望は、魔女の肉体を生み出した</strong>');
+    }
     attack(syojo) {
         put('うーがおー！たべちゃうぞー！');
         syojo.die();
