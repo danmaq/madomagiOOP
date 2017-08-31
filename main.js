@@ -11,46 +11,47 @@ class Syojo {
     die() {
         put(`${this.constructor.name} は死んだ`);
     }
-    hunt(majo) {}
+    get skill() {
+        return '';
+    }
+    hunt(majo) {
+        put(this.skill);
+        majo.die();
+    }
 }
 
 /** Mami ができること一覧。 */
 class Mami extends Syojo {
-    hunt(majo) {
-        put('ティロフィナーレ(笑)');
-        majo.die();
+    get skill() {
+        return 'ティロフィナーレ(笑)';
     }
 }
 
 /** HomuHomu ができること一覧。 */
 class HomuHomu extends Syojo {
-    hunt(majo) {
-        put('時よ！(メガネクイッ)');
-        majo.die();
+    get skill() {
+        return '時よ！(メガネクイッ)';
     }
 }
 
 /** Blossom ができること一覧。 */
 class Blossom extends Syojo {
-    hunt(majo) {
-        put('おしりパンチ！');
-        majo.die();
+    get skill() {
+        return 'おしりパンチ！';
     }
 }
 
 /** Sayaka ができること一覧。 */
 class Sayaka extends Syojo {
-    hunt(majo) {
-        put('瀟洒なソード投げ攻撃');
-        majo.die();
+    get skill() {
+        return '瀟洒なソード投げ攻撃';
     }
 }
 
 /** Madoka ができること一覧。 */
 class Madoka extends Syojo {
-    hunt(majo) {
-        put('かみのちから とくと めに やきつけておけ！！');
-        majo.die();
+    get skill() {
+        return 'かみのちから とくと めに やきつけておけ！！';
     }
 }
 
