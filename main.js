@@ -82,12 +82,14 @@ class Majo {
 /** 準備ができたらここからはじまるよ */
 $(() => {
     put('神は世界を創った');
-    const allstars = [Mami, Madoka, Sayaka, Blossom, HomuHomu, Punie];
-    const trio = allstars // 魔法少女全員を……
-        .sort(() => Math.random() - 0.5) // ランダムに並べ替えて、
-        .filter((v, i) => i < 3) // 最初の3人だけ抜き出して、
-        .map(v => new v()); // この世界に産み落とす！
-    const majo = new Majo();
-    trio.forEach(v => v.hunt(majo)); // 三人の選ばれた少女は、魔女へ一斉攻撃を仕掛ける！
-    majo.attack(trio.pop()); // 最後の魔法少女は反撃を受ける
+    for (let i = 0; i < 10; ++i) {
+        const allstars = [Mami, Madoka, Sayaka, Blossom, HomuHomu, Punie];
+        const trio = allstars // 魔法少女全員を……
+            .sort(() => Math.random() - 0.5) // ランダムに並べ替えて、
+            .filter((v, i) => i < 3) // 最初の3人だけ抜き出して、
+            .map(v => new v()); // この世界に産み落とす！
+        const majo = new Majo();
+        trio.forEach(v => v.hunt(majo)); // 三人の選ばれた少女は、魔女へ一斉攻撃を仕掛ける！
+        trio.forEach(majo.attack);
+    }
 });
